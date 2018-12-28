@@ -1,0 +1,3 @@
+#!/bin/sh
+#g++ cas_2.c  -lpthread -march=nocona -mtune=generic
+g++ $1  -lpthread -march=nocona -mtune=generic
