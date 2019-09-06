@@ -16,3 +16,8 @@ sleep1(unsigned int seconds)
 	pause();			/* next caught signal wakes us up */
 	return(alarm(0));	/* turn off timer, return unslept time */
 }
+
+int main()
+{
+	sleep1(10);
+}
