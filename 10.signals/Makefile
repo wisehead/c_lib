@@ -11,7 +11,7 @@ ifeq "$(PLATFORM)" "solaris"
   CLD = child
 endif
 
-PROGS =	sigusr child  sleep1 tsleep2
+PROGS =	sigusr child  sleep1 tsleep2 read1
 
 all:	$(PROGS)  $(CLD)
 
