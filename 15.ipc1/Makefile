@@ -2,7 +2,7 @@ ROOT=..
 PLATFORM=$(shell $(ROOT)/systype.sh)
 include $(ROOT)/Make.defines.$(PLATFORM)
 
-PROGS =	pipe1 pipe2 myuclc popen1 popen2 add2 add2stdio pipe4 tshm
+PROGS =	pipe1 pipe2 myuclc popen1 popen2 add2 add2stdio pipe4 tshm devzero
 
 all:	$(PROGS) popen.o tellwait.o
 
