@@ -1,0 +1,19 @@
+ROOT=..
+PLATFORM=$(shell $(ROOT)/systype.sh)
+include $(ROOT)/Make.defines.$(PLATFORM)
+
+ifeq "$(PLATFORM)" "solaris"
+  EXTRALIBS = -lsocket -lnsl
+endif
+
+PROGS = 
+MOREPROGS = findsvc 
+
+all:	$(PROGS) $(MOREPROGS) 
+
+%:	%.c $(LIBAPUE)
+
+clean:
+	rm -f $(PROGS) $(MOREPROGS) $(TEMPFILES) *.o
+
+include $(ROOT)/Make.libapue.inc
