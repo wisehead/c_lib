@@ -2,7 +2,7 @@ ROOT=..
 PLATFORM=$(shell $(ROOT)/systype.sh)
 include $(ROOT)/Make.defines.$(PLATFORM)
 
-PROGS =	pipe1
+PROGS =	pipe1 pipe2
 
 all:	$(PROGS) 
 
