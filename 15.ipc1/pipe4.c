@@ -53,7 +53,8 @@ main(void)
 				err_sys("dup2 error to stdout");
 			close(fd2[1]);
 		}
-		if (execl("./add2", "add2", (char *)0) < 0)
+		//if (execl("./add2", "add2", (char *)0) < 0)
+		if (execl("./add2stdio", "add2stdio", (char *)0) < 0)
 			err_sys("execl error");
 	}
 	exit(0);
