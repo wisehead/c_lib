@@ -4,7 +4,7 @@ include $(ROOT)/Make.defines.$(PLATFORM)
 
 PROGS =	pipe1 pipe2
 
-all:	$(PROGS) 
+all:	$(PROGS) tellwait.o
 
 %:	%.c $(LIBAPUE)
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS) $(LDLIBS)
