@@ -9,7 +9,7 @@ endif
 PROGS = 
 MOREPROGS = findsvc 
 
-all:	$(PROGS) $(MOREPROGS) clconn.o clconn2.o
+all:	$(PROGS) $(MOREPROGS) clconn.o clconn2.o initsrv1.o
 
 %:	%.c $(LIBAPUE)
 
