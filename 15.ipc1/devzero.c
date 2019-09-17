@@ -1,6 +1,7 @@
 #include "apue.h"
 #include <fcntl.h>
 #include <sys/mman.h>
+#include <stdio.h>//chenhui
 
 #define	NLOOPS		1000
 #define	SIZE		sizeof(long)	/* size of shared memory area */
@@ -18,12 +19,19 @@ main(void)
 	pid_t	pid;
 	void	*area;
 
+	//B_chenhui
+	/*
 	if ((fd = open("/dev/zero", O_RDWR)) < 0)
 		err_sys("open error");
 	if ((area = mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_SHARED,
 	  fd, 0)) == MAP_FAILED)
 		err_sys("mmap error");
-	close(fd);		/* can close /dev/zero now that it's mapped */
+		*/
+	//close(fd);		/* can close /dev/zero now that it's mapped *///chenhui
+	//E_chenhui
+	if ((area = mmap(0, SIZE, PROT_READ | PROT_WRITE, MAP_ANON | MAP_SHARED,
+	  -1, 0)) == MAP_FAILED)
+		err_sys("mmap error");
 
 	TELL_WAIT();
 
@@ -33,6 +41,7 @@ main(void)
 		for (i = 0; i < NLOOPS; i += 2) {
 			if ((counter = update((long *)area)) != i)
 				err_quit("parent: expected %d, got %d", i, counter);
+			printf("Parent: counter:%d\n", counter);//chenhui
 
 			TELL_CHILD(pid);
 			WAIT_CHILD();
@@ -43,6 +52,7 @@ main(void)
 
 			if ((counter = update((long *)area)) != i)
 				err_quit("child: expected %d, got %d", i, counter);
+			printf("Child: counter:%d\n", counter);//chenhui
 
 			TELL_PARENT(getppid());
 		}
