@@ -6,15 +6,18 @@ ifeq "$(PLATFORM)" "solaris"
   EXTRALIBS = -lsocket -lnsl
 endif
 
-PROGS = ruptime
+PROGS = ruptime ruptimed
 MOREPROGS = findsvc 
 
-all:	$(PROGS) $(MOREPROGS) clconn.o clconn2.o initsrv1.o
+all:	$(PROGS) $(MOREPROGS) clconn.o clconn2.o initsrv1.o initsrv2.o 
 
 %:	%.c $(LIBAPUE)
 
 ruptime:	ruptime.o clconn2.o $(LIBAPUE)
 		$(CC) $(CFLAGS) -o ruptime ruptime.o clconn2.o $(LDFLAGS) $(LDLIBS)
+
+ruptimed:	ruptimed.o initsrv2.o $(LIBAPUE)
+		$(CC) $(CFLAGS) -o ruptimed ruptimed.o initsrv2.o $(LDFLAGS) $(LDLIBS)
 clean:
 	rm -f $(PROGS) $(MOREPROGS) $(TEMPFILES) *.o
 
