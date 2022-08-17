@@ -1,0 +1,26 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=20198)
+  Write of size 8 at 0x000102ff3080 by thread T2:
+    #0 Tsum sum.c:9 (a.out:x86_64+0x100003dcf)
+    #1 wrapper thread.h:21 (a.out:x86_64+0x100003b2a)
+
+  Previous write of size 8 at 0x000102ff3080 by thread T1:
+    #0 Tsum sum.c:9 (a.out:x86_64+0x100003dcf)
+    #1 wrapper thread.h:21 (a.out:x86_64+0x100003b2a)
+
+  Location is global 'sum' at 0x000102ff3080 (a.out+0x000100008080)
+
+  Thread T2 (tid=6533194, running) created by main thread at:
+    #0 pthread_create <null>:2 (libclang_rt.tsan_osx_dynamic.dylib:x86_64+0x2ba9f)
+    #1 create thread.h:32 (a.out:x86_64+0x100003c71)
+    #2 main sum.c:15 (a.out:x86_64+0x100003e24)
+
+  Thread T1 (tid=6533193, running) created by main thread at:
+    #0 pthread_create <null>:2 (libclang_rt.tsan_osx_dynamic.dylib:x86_64+0x2ba9f)
+    #1 create thread.h:32 (a.out:x86_64+0x100003c71)
+    #2 main sum.c:14 (a.out:x86_64+0x100003e18)
+
+SUMMARY: ThreadSanitizer: data race sum.c:9 in Tsum
+==================
+sum = 172058084
+ThreadSanitizer: reported 1 warnings
