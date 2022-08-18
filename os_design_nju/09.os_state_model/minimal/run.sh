@@ -7,3 +7,4 @@
 #!/bin/sh 
 gcc -c minimal.S
 ld minimal.o
+objdump -d minimal.o
