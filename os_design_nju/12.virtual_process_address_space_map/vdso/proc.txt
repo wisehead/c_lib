@@ -1,0 +1,8 @@
+00400000-00401000 r-xp 00000000 fd:01 1847356                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/vdso/a.out
+00600000-00602000 rw-p 00000000 fd:01 1847356                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/vdso/a.out
+7ffff7ddb000-7ffff7dfd000 r-xp 00000000 fd:01 265134                     /usr/lib64/ld-2.17.so
+7ffff7ffa000-7ffff7ffc000 r-xp 00000000 00:00 0                          [vdso]
+7ffff7ffc000-7ffff7ffe000 rw-p 00021000 fd:01 265134                     /usr/lib64/ld-2.17.so
+7ffff7ffe000-7ffff7fff000 rw-p 00000000 00:00 0 
+7ffffffde000-7ffffffff000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]

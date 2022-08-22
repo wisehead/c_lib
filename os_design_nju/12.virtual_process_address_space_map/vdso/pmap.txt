@@ -1,0 +1,10 @@
+26449:   /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/vdso/a.out
+0000000000400000      4K r-x-- a.out
+0000000000600000      8K rw--- a.out
+00007ffff7ddb000    136K r-x-- ld-2.17.so
+00007ffff7ffa000      8K r-x--   [ anon ]
+00007ffff7ffc000      8K rw--- ld-2.17.so
+00007ffff7ffe000      4K rw---   [ anon ]
+00007ffffffde000    132K rw---   [ stack ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total              304K
