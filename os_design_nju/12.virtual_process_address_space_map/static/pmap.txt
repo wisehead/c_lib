@@ -1,0 +1,10 @@
+24143:   /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/static/a.out
+0000000000400000      4K r---- a.out
+0000000000401000    596K r-x-- a.out
+0000000000496000    160K r---- a.out
+00000000004be000     12K rw--- a.out
+00000000004c1000      8K rw---   [ anon ]
+00007ffff7ffd000      8K r-x--   [ anon ]
+00007ffffffde000    132K rw---   [ stack ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total              924K

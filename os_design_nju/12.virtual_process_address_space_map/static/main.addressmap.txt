@@ -1,0 +1,8 @@
+00400000-00401000 r--p 00000000 fd:01 1847342                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/static/a.out
+00401000-00496000 r-xp 00001000 fd:01 1847342                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/static/a.out
+00496000-004be000 r--p 00096000 fd:01 1847342                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/static/a.out
+004be000-004c1000 rw-p 000bd000 fd:01 1847342                            /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/static/a.out
+004c1000-004c3000 rw-p 00000000 00:00 0                                  [heap]
+7ffff7ffd000-7ffff7fff000 r-xp 00000000 00:00 0                          [vdso]
+7ffffffde000-7ffffffff000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
