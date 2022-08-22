@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+LENGTH	dosbox-hack.c	10;"	d	file:
+fd	dosbox-hack.c	/^int n, fd, pid;$/;"	v
+found	dosbox-hack.c	/^uint64_t found[4096];$/;"	v
+main	dosbox-hack.c	/^int main() {$/;"	f
+n	dosbox-hack.c	/^int n, fd, pid;$/;"	v
+overwrite	dosbox-hack.c	/^void overwrite(uint16_t val) {$/;"	f
+pid	dosbox-hack.c	/^int n, fd, pid;$/;"	v
+reset	dosbox-hack.c	/^bool reset;$/;"	v
+scan	dosbox-hack.c	/^void scan(uint16_t val) {$/;"	f
