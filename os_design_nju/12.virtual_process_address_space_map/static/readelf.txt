@@ -1,0 +1,35 @@
+
+Elf 文件类型为 EXEC (可执行文件)
+入口点 0x401c2d
+共有 8 个程序头，开始于偏移量64
+
+程序头：
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  LOAD           0x0000000000000000 0x0000000000400000 0x0000000000400000
+                 0x0000000000000350 0x0000000000000350  R      1000
+  LOAD           0x0000000000001000 0x0000000000401000 0x0000000000401000
+                 0x00000000000944f9 0x00000000000944f9  R E    1000
+  LOAD           0x0000000000096000 0x0000000000496000 0x0000000000496000
+                 0x0000000000027c3d 0x0000000000027c3d  R      1000
+  LOAD           0x00000000000bdec0 0x00000000004beec0 0x00000000004beec0
+                 0x0000000000001850 0x00000000000039e8  RW     1000
+  NOTE           0x0000000000000200 0x0000000000400200 0x0000000000400200
+                 0x0000000000000044 0x0000000000000044  R      4
+  TLS            0x00000000000bdec0 0x00000000004beec0 0x00000000004beec0
+                 0x0000000000000020 0x0000000000000058  R      10
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     10
+  GNU_RELRO      0x00000000000bdec0 0x00000000004beec0 0x00000000004beec0
+                 0x0000000000000140 0x0000000000000140  R      1
+
+ Section to Segment mapping:
+  段节...
+   00     .note.gnu.build-id .note.ABI-tag .rela.plt 
+   01     .init .plt .text __libc_thread_freeres_fn __libc_freeres_fn .fini 
+   02     .rodata .stapsdt.base __libc_thread_subfreeres __libc_subfreeres __libc_IO_vtables __libc_atexit .eh_frame .gcc_except_table 
+   03     .tdata .init_array .fini_array .data.rel.ro .got .got.plt .data .bss __libc_freeres_ptrs 
+   04     .note.gnu.build-id .note.ABI-tag 
+   05     .tdata .tbss 
+   06     
+   07     .tdata .init_array .fini_array .data.rel.ro .got 

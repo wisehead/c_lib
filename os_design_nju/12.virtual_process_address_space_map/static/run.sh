@@ -11,3 +11,5 @@ gdb a.out
 --info inferiors
 cat /proc/24143/maps >main.addressmap.txt
 pmap 24143 >pmap.txt
+
+readelf -l a.out
