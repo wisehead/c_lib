@@ -1,0 +1,6 @@
+21522:   /home/chenhui/github/c_lib/os_design_nju/12.virtual_process_address_space_map/minimal/a.out
+0000000000400000      4K r-x-- a.out
+00007ffff7ffd000      8K r-x--   [ anon ]
+00007ffffffde000    132K rwx--   [ stack ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total              148K
