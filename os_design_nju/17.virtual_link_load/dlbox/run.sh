@@ -9,3 +9,7 @@ gcc -g dlbox.c -o dlbox
 ./dlbox gcc libc.S
 ./dlbox gcc libhello.S 
 ./dlbox gcc main.S
+./dlbox readdl libc.dl
+./dlbox readdl main.dl
+./dlbox readdl libhello.dl
+./dlbox objdump *.dl >out.txt
