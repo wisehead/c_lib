@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEST	dfs-fork.c	10;"	d	file:
+EMPTY	dfs-fork.c	11;"	d	file:
+MOD	loader-static.c	13;"	d	file:
+ROUND	loader-static.c	12;"	d	file:
+STK_SZ	loader-static.c	11;"	d	file:
+_start	minimal.S	/^_start:$/;"	l
+ch	dfs-fork.c	/^  int x, y, ch;$/;"	m	struct:move	file:
+dfs	dfs-fork.c	/^void dfs(int x, int y) {$/;"	f
+display	dfs-fork.c	/^void display() {$/;"	f
+ed	minimal.S	/^ed:$/;"	l
+execve_	loader-static.c	/^void execve_(const char *file, char *argv[], char *envp[]) {$/;"	f
+main	dfs-fork.c	/^int main() {$/;"	f
+main	env.c	/^int main() {$/;"	f
+main	loader-static.c	/^int main(int argc, char *argv[], char *envp[]) {$/;"	f
+map	dfs-fork.c	/^char map[][512] = {$/;"	v
+move	dfs-fork.c	/^struct move {$/;"	s	file:
+moves	dfs-fork.c	/^} moves[] = {$/;"	v	typeref:struct:move
+push	loader-static.c	14;"	d	file:
+st	minimal.S	/^st:$/;"	l
+x	dfs-fork.c	/^  int x, y, ch;$/;"	m	struct:move	file:
+y	dfs-fork.c	/^  int x, y, ch;$/;"	m	struct:move	file:
