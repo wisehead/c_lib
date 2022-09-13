@@ -13,3 +13,4 @@ gcc -g dlbox.c -o dlbox
 ./dlbox readdl main.dl
 ./dlbox readdl libhello.dl
 ./dlbox objdump *.dl >out.txt
+./dlbox interp main.dl
