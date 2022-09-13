@@ -7,6 +7,9 @@
  *******************************************************************************/
 #include <stdio.h>
 #include <fcntl.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int main(void) {
 	int fd = open("abc", O_RDWR);
