@@ -3,6 +3,7 @@
 //F_OK check for present
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 
