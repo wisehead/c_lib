@@ -1,6 +1,0 @@
-./stat.c
-./access.c
-./filemanager6.c
-./chdir.c
-./pathconf.c
-./chmod.c
