@@ -19,12 +19,14 @@ int main(void)
     while(1){
       printf("child%d\n",getpid());
       sleep(3);
+	  break;
     }
   }
   else if(pid>0){
     pid_t pid_c;
     while(1){
       pid_c=wait(NULL);
+	  printf("parent:child:%d exits\n", pid_c);
       if(pid_c == -1)
         break;
     }
