@@ -8,10 +8,11 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <sys/wait.h>
 int main(void)
 {
   int fd[2];
-  char str[1024]="hello world!";
+  char str[1024]="hello world!\n";
   char buf[1024];
   pid_t pid;
   if(pipe(fd)<0){
