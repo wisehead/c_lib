@@ -9,6 +9,7 @@
 #include <pthread.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void *th_fun(void *arg) {
 	int n = 10;
@@ -29,8 +30,9 @@ int main() {
 
 	err = pthread_create(&tid, &attr, th_fun, NULL);
 	printf("phtread_create err:%d\n", err);
+	//pthread_attr_destroy(&attr);
 
-	err =  pthread_join(tid, NULL);
+	//err =  pthread_join(tid, NULL);
 	while(1) {
 		if (err != 0) {
 			printf("%s\n", strerror(err));
