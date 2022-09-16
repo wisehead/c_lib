@@ -45,7 +45,7 @@ int main(void)
 		printf("thread un known\n");
 	/* 设置线程分离属性 */
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-	while (1) {
+	while (i < 1024) {
 		/* 在堆上申请内存，指定线程栈的起始地址和大小 */ 
 		stackaddr = malloc(SIZE);
 		if (stackaddr == NULL) {
@@ -60,6 +60,7 @@ int main(void)
 			exit(1);
 		}
 		printf("%d\n", i++);
+		sleep(1);
 	}
 	pthread_attr_destroy(&attr);
 	return 0;
