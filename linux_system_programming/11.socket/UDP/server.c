@@ -15,40 +15,40 @@
 
 int main (void)
 {
-  int sockfd,i;
-  struct sockaddr_in serveraddr,clientaddr;
-  char buf[MAXLINE];
-  char ipstr[INET_ADDRSTRLEN];
-  socklen_t clientlen;
-  ssize_t len;
-  //create a socket
-  sockfd=socket(AF_INET,SOCK_DGRAM,0);
-  
-  bzero(&serveraddr,sizeof(serveraddr));
-  serveraddr.sin_family=AF_INET;  //ipv4
-  serveraddr.sin_addr.s_addr=htonl(INADDR_ANY);    //local any ip
-  serveraddr.sin_port=htons(SERVER_PORT);
-  //bind
-  bind(sockfd,(struct sockaddr*)&serveraddr,sizeof(serveraddr));
+	int sockfd,i;
+	struct sockaddr_in serveraddr,clientaddr;
+	char buf[MAXLINE];
+	char ipstr[INET_ADDRSTRLEN];
+	socklen_t clientlen;
+	ssize_t len;
+	//create a socket
+	sockfd=socket(AF_INET,SOCK_DGRAM,0);
 
-  while(1){
-  clientlen=sizeof(clientaddr);
-  len=recvfrom(sockfd,buf,sizeof(buf),0,(struct sockaddr*)&clientaddr,
-    &clientlen);
-  printf("client IP %s\tPORT%d\n",
-    inet_ntop(AF_INET,&clientaddr.sin_addr.s_addr,
-      ipstr,sizeof(ipstr)),ntohs(clientaddr.sin_port));
+	bzero(&serveraddr,sizeof(serveraddr));
+	serveraddr.sin_family=AF_INET;  //ipv4
+	serveraddr.sin_addr.s_addr=htonl(INADDR_ANY);    //local any ip
+	serveraddr.sin_port=htons(SERVER_PORT);
+	//bind
+	bind(sockfd,(struct sockaddr*)&serveraddr,sizeof(serveraddr));
 
-  i=0;
-  while(i<len){
-    buf[i]=toupper(buf[i]);
-    i++;
-  }
-  sendto(sockfd,buf,len,0,(struct sockaddr*)&clientaddr,sizeof(clientaddr));
-  }
+	while(1){
+		clientlen=sizeof(clientaddr);
+		len=recvfrom(sockfd,buf,sizeof(buf),0,(struct sockaddr*)&clientaddr,
+				&clientlen);
+		printf("client IP %s\tPORT%d\n",
+				inet_ntop(AF_INET,&clientaddr.sin_addr.s_addr,
+					ipstr,sizeof(ipstr)),ntohs(clientaddr.sin_port));
 
-  close(sockfd);
+		i=0;
+		while(i<len){
+			buf[i]=toupper(buf[i]);
+			i++;
+		}
+		sendto(sockfd,buf,len,0,(struct sockaddr*)&clientaddr,sizeof(clientaddr));
+	}
 
-  return 0;
-  
+	close(sockfd);
+
+	return 0;
+
 }
