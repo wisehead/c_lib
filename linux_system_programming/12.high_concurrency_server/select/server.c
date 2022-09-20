@@ -52,8 +52,10 @@ int main(int argc, char *argv[]) {
 		rset = allset;
 		/* 每次循环时都从新设置select监控信号集 */ 
 		nready = select(maxfd+1, &rset, NULL, NULL, NULL);
+
 		if (nready < 0)
 			perr_exit("select error");
+
 		if (FD_ISSET(listenfd, &rset)) { /* new client connection */
 			cliaddr_len = sizeof(cliaddr);
 			connfd = Accept(listenfd, (struct sockaddr *)&cliaddr, &cliaddr_len);
@@ -61,12 +63,13 @@ int main(int argc, char *argv[]) {
 					inet_ntop(AF_INET, &cliaddr.sin_addr, str, sizeof(str)), 
 					ntohs(cliaddr.sin_port));
 
-			for (i = 0; i < FD_SETSIZE; i++) 
+			for (i = 0; i < FD_SETSIZE; i++) {
 				if (client[i] < 0) {
 					client[i] = connfd;
 					/* 保存accept返回的文件描述符到client[]里 */
 					break;
 				}
+			}
 
 			/* 达到select能监控的文件个数上限 1024 */ 
 			if (i == FD_SETSIZE) {
