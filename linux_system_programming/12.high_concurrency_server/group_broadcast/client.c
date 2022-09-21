@@ -36,6 +36,8 @@ int main(int argc,char *argv[])
 	bzero(&localaddr,sizeof(localaddr));
 	localaddr.sin_family=AF_INET;
 	//ipadress
+	//127.0.0.1 doesn't work
+	//inet_pton(AF_INET, "127.00.0.1", &localaddr.sin_addr.s_addr);
 	inet_pton(AF_INET, "0.0.0.0", &localaddr.sin_addr.s_addr);
 	localaddr.sin_port=htons(CLIENT_PORT);
 
@@ -44,6 +46,7 @@ int main(int argc,char *argv[])
 	/* group address*/
 	inet_pton(AF_INET, GROUP, &group.imr_multiaddr);
 	/* local address*/
+	//127.0.0.1 doesn't work
 	//inet_pton(AF_INET, ipstr, &group.imr_address);
 	inet_pton(AF_INET, "0.0.0.0", &group.imr_address);
 	/*eth0 --> index, command: ip ad*/
