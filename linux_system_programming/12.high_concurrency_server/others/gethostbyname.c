@@ -15,15 +15,15 @@ int main(int argc, char *argv[]) {
 	struct hostent *host;
 	char str[128];
 	host = gethostbyname(argv[1]);
-	printf("%s\n", host->h_name);
+	printf(" host->h_name:%s\n", host->h_name);
 
 	while (*(host->h_aliases) != NULL)
-		printf("%s\n", host->h_aliases++);
+		printf("host->h_aliase:%s\n", *host->h_aliases++);
 	
 	switch (host->h_addrtype) {
 		case AF_INET:
 			while (*(host->h_addr_list) != NULL)
-				printf("%s\n", inet_ntop(AF_INET, (*host->h_addr_list++), str, sizeof(str)));
+				printf("host->h_addr_list:%s\n", inet_ntop(AF_INET, (*host->h_addr_list++), str, sizeof(str)));
 			break;
 		default:
 			printf("unknown address type\n");
