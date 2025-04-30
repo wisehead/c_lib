@@ -1,1 +1,1 @@
-adfadsfassdfas
+这是写入文件的内容。
