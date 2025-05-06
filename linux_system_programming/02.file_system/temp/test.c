@@ -53,7 +53,7 @@ void fsize(char *name)
 int main(int argc, char **argv)
 {
   if(argc == 1)
-    fsize("./");
+    fsize(".");
   else
     while(--argc>0)
       fsize(*++argv);
