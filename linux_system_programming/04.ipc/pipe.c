@@ -31,7 +31,8 @@ int main (void)
     int len;
     close(fd[1]);
     len = read(fd[0],buf,sizeof(buf));
-    write(STDOUT_FILENO,buf,len);
+    //write(STDOUT_FILENO,buf,len);
+	printf("%s\n",buf);
   }
   else {
     perror("fork");
