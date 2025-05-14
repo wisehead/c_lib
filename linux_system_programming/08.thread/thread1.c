@@ -9,7 +9,7 @@ void *th_fun(void *arg)
 {
   int *p=(int *)arg;
   printf("thread PID=%d\n",getpid());
-  //printf("thread ID=%x\n" ,(int)pthread_self());
+  printf("thread ID=%x\n" ,(int)pthread_self());
   printf("thread ID=%ld\n" ,(int)pthread_self());
 
   printf("thread *arg=%d\n",*p);
@@ -24,7 +24,7 @@ int main(void)
   pthread_create(&tid,NULL,th_fun,(void*)&n);
   //printf("main thread ID = %x\n",(int)pthread_self());
   printf("main thread ID = %ld\n",(int)pthread_self());
-  //printf("main child thread ID=%x\n",(int)tid);
+  printf("main child thread ID=%x\n",(int)tid);
   printf("main child thread ID=%ld\n",(int)tid);
   printf("main PID = %d\n",getpid());
   sleep(2);
