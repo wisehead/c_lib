@@ -12,7 +12,7 @@
 #include <unistd.h>
 
 void *th_fun(void *arg) {
-	int n = 10;
+	int n = 20;
 	while(n--) {
 		printf("%x    %d\n", (int)pthread_self(), n);
 		sleep(1);
@@ -30,9 +30,9 @@ int main() {
 
 	err = pthread_create(&tid, &attr, th_fun, NULL);
 	printf("phtread_create err:%d\n", err);
-	//pthread_attr_destroy(&attr);
+	pthread_attr_destroy(&attr);
 
-	//err =  pthread_join(tid, NULL);
+	err =  pthread_join(tid, NULL);
 	while(1) {
 		if (err != 0) {
 			printf("%s\n", strerror(err));
